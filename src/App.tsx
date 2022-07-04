@@ -1,10 +1,11 @@
 
 import "./global.css"
+import { Header } from "./Header";
 
 export function App() {
     return (
         <div>
-            <h1>IKARO</h1>
+            <Header/>
         </div>
     );
 }
