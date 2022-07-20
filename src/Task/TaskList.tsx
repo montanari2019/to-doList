@@ -7,7 +7,7 @@ export function TaskList() {
   const [check, setCheck] = useState<Boolean>(false)
 
   return (
-    <div className={styleTaskList.container}>
+    <div className={ check==true ? styleTaskList.containerCheck : styleTaskList.container}>
       <label className={styleTaskList.checkContainer}>
         <input type="checkbox" onClick={() => check==false ? setCheck(true) : setCheck(false)}/>
         <span className={styleTaskList.checkbox}></span>
