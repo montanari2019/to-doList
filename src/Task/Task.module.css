@@ -1,19 +1,19 @@
+.globalContainer{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    
+}
+
 .addTask{
     display: flex;
     justify-content: center;
     margin-top: calc(0px - 1.5rem - 6px);
-}
-
-.container{
-    max-width: 39.875rem;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-    margin-top: 4rem;
-    
+    width: 46rem;
 
 }
+
 
 .addTask > input {
     width: 39.875rem;
@@ -56,5 +56,77 @@
     margin-left: 0.5rem;
 }
 
+.sectionTasks{
+    margin-top: 4.0625rem;
+    width: 46rem;
+    /* background: #ffff; */
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.taskTitle{
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 16.94px;
+    color: var(--blue)
+
+}
+
+.taskTitle > span {
+    color: var(--gray-200);
+    background: var(--gray-400 );
+    margin-left: 0.5rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 40%;
+}
+
+.taskConcluded{
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 16.94px;
+    color: var(--purple)
+}
+
+.taskConcluded > span {
+    color: var(--gray-200);
+    background: var(--gray-400 );
+    margin-left: 0.5rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 40%;
+}
+
+.clipboard{
+
+    width: 46rem;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+}
+
+.clipboardTrueTask {
+    display: none;
+}
+
+.clipboard > img {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+.clipboardStrong02{
+    font-weight: 200;
+}
+
+.tasksList{
+    width: 46rem;
+}
 
 
