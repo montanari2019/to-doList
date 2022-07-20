@@ -46,13 +46,20 @@ export function Task() {
         </strong>
       </section>
 
-      <section className={styleTask.clipboard}>
+      <section className={ tasksList.length > 0 ? styleTask.clipboardTrueTask : styleTask.clipboard}>
        
           <img src={clipbooard} />
           <strong className={styleTask.clipboardStrong01}>Você ainda não tem tarefas cadastradas</strong>
 
           <strong className={styleTask.clipboardStrong02} >Crie tarefas e organize seus itens a fazer</strong>
         
+      </section>
+
+      <section className={styleTask.tasksList}>
+      <TaskList/>
+      <TaskList/>
+      <TaskList/>
+
       </section>
     </div>
   );
