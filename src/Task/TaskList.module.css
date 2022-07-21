@@ -18,7 +18,13 @@
     align-items: flex-start;
 }
 
+.display{
+    display: flex;
+    justify-content: space-between;
+}
+
 .strong {
+    width: 39rem;
     padding: 0 1rem ;
     color: var(--gray-100);
     font-weight: 400;
@@ -27,6 +33,7 @@
 
 }
 .strongCheck{
+    width: 39rem;
     padding: 0 1rem ;
     color: var(--gray-300);
     font-weight: 400;
@@ -92,13 +99,13 @@
 }
 
 .trash{
-    width: 1.8rem;
-    height: 1.8rem;
+
+    padding: 3px;
+    margin-right: 1.5rem;
 }
 .trash:hover{
     background: var(--gray-400);
-    width: 1.8rem;
-    height: 1.8rem;
+    padding: 3px;
     border-radius: 3px;
     color: var(--danger)
 }

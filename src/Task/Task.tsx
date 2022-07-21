@@ -7,13 +7,14 @@ import clipbooard from "./../assets/clipbooard.svg";
 const tasksList = [
   {
     id: 1,
-    title: "Fazer relatório do controle interno",
+    title:
+      "lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, sed diam, sed diam, sed diam, sed diam, sed diam, sed diam,",
     concluded: false,
   },
   {
     id: 2,
     title: "Limpar e organizar sua casa",
-    concluded: true,
+    concluded: false,
   },
   {
     id: 3,
@@ -22,12 +23,26 @@ const tasksList = [
   },
   {
     id: 5,
-    title: "Conbversar com sua mãe",
+    title:
+      "lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, sed diam, sed diam, sed diam, sed diam, sed diam, sed diam,",
     concluded: false,
   },
 ];
 
 export function Task() {
+  function concludedTask(id: number, checked: boolean) {
+    const taskConclud = tasksList.map((tasks) => {
+      if (tasks.id === id && checked === false) {
+        tasks.concluded = true;
+      } else if (tasks.id === id && checked === true) {
+        tasks.concluded = false;
+      }
+      return tasks;
+    });
+
+    console.log(taskConclud);
+  }
+
   return (
     <div className={styleTask.globalContainer}>
       <section className={styleTask.addTask}>
@@ -46,20 +61,38 @@ export function Task() {
         </strong>
       </section>
 
-      <section className={ tasksList.length > 0 ? styleTask.clipboardTrueTask : styleTask.clipboard}>
-       
-          <img src={clipbooard} />
-          <strong className={styleTask.clipboardStrong01}>Você ainda não tem tarefas cadastradas</strong>
+      <section
+        className={
+          tasksList.length > 0
+            ? styleTask.clipboardTrueTask
+            : styleTask.clipboard
+        }
+      >
+        <img src={clipbooard} />
+        <strong className={styleTask.clipboardStrong01}>
+          Você ainda não tem tarefas cadastradas
+        </strong>
 
-          <strong className={styleTask.clipboardStrong02} >Crie tarefas e organize seus itens a fazer</strong>
-        
+        <strong className={styleTask.clipboardStrong02}>
+          Crie tarefas e organize seus itens a fazer
+        </strong>
       </section>
 
       <section className={styleTask.tasksList}>
+        {/* <TaskList/>
       <TaskList/>
-      <TaskList/>
-      <TaskList/>
-
+      <TaskList/> */}
+        {tasksList.map((tasks) => {
+          return (
+            <TaskList
+              key={tasks.id}
+              id={tasks.id}
+              title={tasks.title}
+              concluded={tasks.concluded}
+              taskConcluded={concludedTask}
+            />
+          );
+        })}
       </section>
     </div>
   );
