@@ -1,7 +1,7 @@
 
 import "./global.css"
 import { Header } from "./Header/Header";
-import { Task } from "./Task/Task";
+import { TaskList } from "./Task/TaskList";
 
 
 
@@ -9,7 +9,7 @@ export function App() {
     return (
         <div>
             <Header/>
-            <Task/>
+            <TaskList/>
             
         </div>
     );
