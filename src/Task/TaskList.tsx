@@ -3,24 +3,16 @@ import clipbooard from "./../assets/clipbooard.svg";
 import { PlusCircle } from "phosphor-react";
 import { Task } from "./Task";
 import { ChangeEvent, ChangeEventHandler, FormEvent, useState } from "react";
-import { TaskProps } from "../models/TaskModels";
-
-const tasksList = [
-  {
-    id: 2,
-    title: "Limpar e organizar sua casa",
-    concluded: false,
-  },
-];
+import {TaskPropsComponent } from "../models/TaskModels";
 
 export function TaskList() {
 
 
   const [titleTask, setTitleTask] = useState("")
 
-  const [tasks, setTasks] = useState(tasksList)
+  const [tasks, setTasks] = useState<TaskPropsComponent[]>([])
 
-  const [countCompletedTasks, setCountCompletedTasks] = useState([])
+  const [countCompletedTasks, setCountCompletedTasks] = useState<TaskPropsComponent[]>([])
  
 
   const isNewTaskEmpty = titleTask.length === 0
