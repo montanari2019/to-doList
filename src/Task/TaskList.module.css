@@ -1,105 +1,140 @@
-.container{
-
- margin-top: 1.5rem;
- padding: 1.5rem 1rem;
- background: var(--gray-500);
- border: 1px solid var(--gray-400);
- border-radius: 8px;
- display: flex;
- align-items: flex-start;
-
-}
-.containerCheck{
-    margin-top: 1.5rem;
-    padding: 1.5rem 1rem;
-    background: var(--gray-500);
-    border-radius: 8px;
+.globalContainer{
     display: flex;
-    align-items: flex-start;
-}
-
-.strong {
-    padding: 0 1rem ;
-    color: var(--gray-100);
-    font-weight: 400;
-    line-height: 1.5;
-    cursor: pointer;
-
-}
-.strongCheck{
-    padding: 0 1rem ;
-    color: var(--gray-300);
-    font-weight: 400;
-    line-height: 1.5;
-    cursor: pointer;
-    text-decoration: line-through;
-}
-
-.checkContainer{
-    display: block;
-    margin-right: 1rem;
-    margin-top: 3px;
-}
-
-.checkContainer > input{
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.checkbox{
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
     
+}
+
+.addTask{
+    display: flex;
+    justify-content: center;
+    margin-top: calc(0px - 1.5rem - 6px);
+    width: 46rem;
+
+}
+
+
+.addTask > input {
+    width: 39.875rem;
+    height: 3.625rem;
+    color: var(--gray-300);
     background: var(--gray-500);
-    width: 1.2rem;
-    height: 1.2rem;
-    border: 1px solid var(--blue);
-    border-radius: 10px;
-    position: absolute;
-    cursor: pointer;
-
+    border: var(--gray-700) solid 1px;
+    border-radius: 8px;
+    padding-left: 1rem;
+    resize: none;
+    
 }
 
-.checkContainer > input:checked ~ .checkbox{
-    background: var(--purple);
+
+
+.addTask > input:focus{
+    outline: 1px solid var(--purple-dark);
+}
+
+.addTask > button{
+    background: var(--blue-dark);
     border: none;
+    margin-left: 0.5rem;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    font-weight: bold;
+    line-height: 1.4;
+    align-items: center;
+    color: var(--gray-100);
+    cursor: pointer;
 }
 
-.checkContainer .checkbox::after{
-    left: 7.5px;
-    top: 3px;
-    width: 3px;
-    height: 8px;
-    border: 1px solid var(--gray-100);
-    border-width: 0 1.8px 1.8px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg)
+.addTask > button[type="submit"]:disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
-.checkbox::after{
-    content: "";
-    position: absolute;
+.addTask > button:hover{
+    background: var(--blue);
+    transition: background-color 0.1s;
+}
+
+.addTask > button:focus {
+    outline: 1px solid var(--blue)
+}
+.plusCircle{
+    margin-left: 0.5rem;
+}
+
+.sectionTasks{
+    margin-top: 4.0625rem;
+    width: 46rem;
+    /* background: #ffff; */
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.taskTitle{
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 16.94px;
+    color: var(--blue)
+
+}
+
+.taskTitle > span {
+    color: var(--gray-200);
+    background: var(--gray-400 );
+    margin-left: 0.5rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 40%;
+}
+
+.taskConcluded{
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 16.94px;
+    color: var(--purple)
+}
+
+.taskConcluded > span {
+    color: var(--gray-200);
+    background: var(--gray-400 );
+    margin-left: 0.5rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 40%;
+}
+
+.clipboard{
+
+    width: 46rem;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+}
+
+.clipboardTrueTask {
     display: none;
 }
 
-.checkContainer > input:checked ~ .checkbox::after{
-    display: block;
+.clipboard > img {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
 }
 
-.checkContainer > input:checked ~ .strong{
-    text-decoration: line-through;
-    background: var(--purple);
+.clipboardStrong02{
+    font-weight: 200;
 }
 
-.trash{
-    width: 1.8rem;
-    height: 1.8rem;
+.tasksList{
+    width: 46rem;
 }
-.trash:hover{
-    background: var(--gray-400);
-    width: 1.8rem;
-    height: 1.8rem;
-    border-radius: 3px;
-    color: var(--danger)
-}
+
 
