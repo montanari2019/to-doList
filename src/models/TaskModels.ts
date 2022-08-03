@@ -6,7 +6,10 @@ export interface TaskProps {
     onDeleteTask: (id: number) => void;
 }
 
-export interface TaskListRender {
-    taks: TaskProps[];
+export interface TaskPropsComponent{
+    
+    id: number;
+    title: string;
+    concluded: boolean;
 }
 
