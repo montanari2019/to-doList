@@ -2,8 +2,9 @@ import styleTaskList from "./TaskList.module.css";
 import clipbooard from "./../assets/clipbooard.svg";
 import { PlusCircle } from "phosphor-react";
 import { Task } from "./Task";
-import { ChangeEvent, ChangeEventHandler, FormEvent, useState } from "react";
+import { ChangeEvent, ChangeEventHandler, FormEvent, useEffect, useState } from "react";
 import {TaskPropsComponent } from "../models/TaskModels";
+import { getLocalStorageTask, setLocalStorageTask } from "../utils/LocalStorage";
 
 export function TaskList() {
 
@@ -13,9 +14,22 @@ export function TaskList() {
   const [tasks, setTasks] = useState<TaskPropsComponent[]>([])
 
   const [countCompletedTasks, setCountCompletedTasks] = useState<TaskPropsComponent[]>([])
+
+  const getTasks:TaskPropsComponent[] = getLocalStorageTask()
  
 
   const isNewTaskEmpty = titleTask.length === 0
+
+  useEffect(()=>{
+
+    if(tasks.length === 0 && getTasks.length > 0){
+      setTasks(getTasks)
+    }else{
+      setLocalStorageTask(tasks)
+    }
+
+
+  },[tasks])
 
   function concludedTask(id: number, checked: boolean) {
    tasks.map((task) => {
@@ -27,7 +41,7 @@ export function TaskList() {
       return tasks;
     });
     setTasks(tasks)
-    console.log(tasks)
+
     setCountCompletedTasks(tasks.filter(task => {
       return task.concluded == true
     }))
@@ -41,7 +55,7 @@ export function TaskList() {
 
   function handleCreatedTask(event: FormEvent) {
     event.preventDefault()
-    console.log("chamando função de add task") 
+
     const taskCreated = {
       id: new Date().getTime(),
       title: titleTask,
@@ -57,10 +71,19 @@ export function TaskList() {
   
   
   function handleDeleteTask(taskIdToDelete: number) {
-    const tasksWithoutTask = tasks.filter( task =>  {
+    const tasksWithoutTask:TaskPropsComponent[] = tasks.filter( task =>  {
       return task.id !== taskIdToDelete
     })
-    setTasks(tasksWithoutTask)
+    console.log(tasksWithoutTask)
+    if(tasksWithoutTask.length === 0){
+      setTasks([])
+      setLocalStorageTask([])
+    }else{
+      setTasks(tasksWithoutTask)
+    }
+
+
+
   }
   return (
     <div className={styleTaskList.globalContainer}>
