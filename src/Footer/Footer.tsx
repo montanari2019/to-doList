@@ -22,7 +22,7 @@ export function Footer() {
 
             <div className={style.text}>
                 <strong>
-                    Criado por Ikaro Bruno da Mata Monatanri
+                    Desenvolvido por Ikaro Bruno da Mata Monatanri
                 </strong>
                 <p>{anoAtual}</p>
             </div>
