@@ -70,6 +70,7 @@ export function TaskList() {
           Criar <PlusCircle className={styleTaskList.plusCircle} size={20} />
         </button>
       </form>
+
       <section className={styleTaskList.sectionTasks}>
         <strong className={styleTaskList.taskTitle}>
           Tarefas Criadas <span>{tasks.length}</span>
