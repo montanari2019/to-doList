@@ -37,7 +37,7 @@ Futuras verções iremos colocar controle de usário e integração com Api, poi
 </br>
 
 <p>Mobile</p>
-<img style="" src="./src/assets/todo-mobile.gif" />
+<img style="" src="./src/assets/todo-list_mobile.gif" />
 
 </br>
 
